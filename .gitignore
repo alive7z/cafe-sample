@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+
+# Production build output
+dist/
+
+# Local environment variables
+.env
+.env.*
+!.env.example
+
+# Logs and local tooling files
+*.log
+.DS_Store
+.vite/
+coverage/
+
