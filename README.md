@@ -29,8 +29,9 @@ The production output is in `dist/`.
 Menu content and images live in `src/lib/images.js`. Café details live in
 `src/lib/site.js`. Contact details, address, hours, and prices are sample content.
 The newsletter form saves an email only in the current browser; connect a mailing
-service before using it for real subscriptions. Photography, fonts, and the map
-require an internet connection. Images have a local visual fallback on failure.
+service before using it for real subscriptions. Photography is bundled as responsive
+WebP files and served directly from the deployment. Fonts and the map use external
+services. Images have a visual fallback on failure.
 
 The original Three.js components remain in `src/three/` for reference, but are
 excluded from the active page and production bundle to reduce startup and GPU work.
