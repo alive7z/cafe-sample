@@ -19,23 +19,6 @@
     scroll-behavior: auto;
   }
 
-  html.lenis,
-  html.lenis body {
-    height: auto;
-  }
-
-  .lenis.lenis-smooth {
-    scroll-behavior: auto !important;
-  }
-
-  .lenis.lenis-smooth [data-lenis-prevent] {
-    overscroll-behavior: contain;
-  }
-
-  .lenis.lenis-stopped {
-    overflow: hidden;
-  }
-
   body {
     @apply bg-ink text-cream font-sans antialiased;
     margin: 0;
@@ -150,3 +133,43 @@
     transition-duration: 0.001ms !important;
   }
 }
+
+/* A quieter editorial rhythm, with motion only where it helps. */
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+  body { background: #11120f; }
+  button, a, input { touch-action: manipulation; }
+  button, a { -webkit-tap-highlight-color: rgba(192, 138, 94, .15); }
+  :focus-visible { outline: 2px solid #c08a5e; outline-offset: 5px; }
+  section { scroll-margin-top: 12px; }
+  img { display: block; }
+}
+@layer components {
+  .btn { @apply min-h-12; transition-property: color, background-color, border-color, transform; transition-duration: 200ms; }
+  .btn-solid { background: #d3ab82; color: #171710; }
+  .btn-solid:hover { background: #e8c9a8; transform: translateY(-2px); }
+  .btn-ghost:hover { background: rgba(245,239,230,.05); }
+  .eyebrow { letter-spacing: .22em; }
+  .menu-filter { @apply rounded-full border border-cream/15 px-5 py-3 text-xs text-cream/65 transition-colors hover:border-ember/60 hover:text-cream; }
+  .menu-filter.is-active { @apply border-ember bg-ember text-ink; }
+}
+.hero { background: radial-gradient(ellipse at 75% 35%, #2a2b20 0%, #171811 35%, #11120f 75%); }
+.hero-photo::before { content: ''; position: absolute; inset: -12px 4px 24px 24px; border: 1px solid rgba(192,138,94,.3); border-radius: 46% 46% 12px 12px; pointer-events: none; }
+.hero-image { object-position: 50% 48%; }
+.hero-copy { animation: enter .65s ease-out both; }
+.smart-image img { transition: transform .55s cubic-bezier(.22,1,.36,1); }
+.nav-link { transition: color .2s; }
+.menu-dialog { padding: 0; width: min(520px, calc(100% - 32px)); max-height: calc(100dvh - 48px); border: 0; border-radius: 16px; background: transparent; overscroll-behavior: contain; }
+.menu-dialog::backdrop { background: rgba(0,0,0,.8); }
+body:has(dialog[open]) { overflow: hidden; }
+.skip-link { position: fixed; top: 8px; left: 16px; z-index: 100; transform: translateY(-150%); background: #f5efe6; color: #111; padding: 12px 20px; border-radius: 4px; }
+.skip-link:focus { transform: translateY(0); }
+#main { outline: none; }
+@keyframes enter { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+@media (hover: hover) and (pointer: fine) { .group:hover .smart-image img { transform: scale(var(--image-hover-scale, 1)); } }
+@media (min-width: 1024px) { main > section:not(#home):not(#signature) { padding-top: 110px; padding-bottom: 110px; } }
+@media (max-width: 639px) {
+  main > section:not(#home):not(#signature) { padding-top: 72px; padding-bottom: 72px; }
+  .hero > .container-x:last-child { font-size: 8px; letter-spacing: .1em; gap: 20px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .hero-copy { animation: none; } }

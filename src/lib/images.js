@@ -1,5 +1,5 @@
 const u = (id, w = 1400) =>
-  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=80`
+  `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&q=75`
 
 export const IMAGES = {
   heroCupFallback: u('photo-1461023058943-07fcbe16d735', 1200),
@@ -52,7 +52,7 @@ export const MENU = [
   {
     name: 'Desserts',
     tag: 'Pastry',
-    description: 'Dark chocolate torte, espresso caramel, crème fraîche.',
+    description: 'A rotating selection of freshly made pastries and sweet treats.',
     price: '$7.00',
     img: u('photo-1551024506-0bccd828d307', 1100),
     tone: '#2b1a14',

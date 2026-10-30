@@ -1,9 +1,7 @@
 export const SITE = {
-  name: 'NÒIR',
+  name: 'Your Restaurant',
   tagline: 'Specialty Coffee · Kitchen · Since 2014',
-  phoneDisplay: '+91 91055 XXXXX',
-  phoneHref: 'tel:+9191055',
-  email: 'hello@noircafe.in',
+  email: 'hello@yourrestaurant.example',
   address: '24 Ember Lane, Bandra West, Mumbai 400050',
   mapEmbed: 'https://www.google.com/maps?q=Bandra%20West%20Mumbai&z=14&output=embed',
   directions:

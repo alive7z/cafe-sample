@@ -8,9 +8,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App />
   </React.StrictMode>,
 )
-
-const boot = document.getElementById('boot')
-if (boot) {
-  boot.style.opacity = '0'
-  setTimeout(() => boot.remove(), 900)
-}

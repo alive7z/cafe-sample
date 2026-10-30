@@ -12,7 +12,7 @@ export default function Gallery() {
     const el = scroller.current
     if (!el) return
     const amount = el.clientWidth * 0.7
-    el.scrollBy({ left: dir * amount, behavior: 'smooth' })
+    el.scrollBy({ left: dir * amount, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })
   }, [])
 
   return (
@@ -61,7 +61,9 @@ export default function Gallery() {
 
         <div
           ref={scroller}
-          data-lenis-prevent
+          tabIndex={0}
+          role="region"
+          aria-label="Café photo gallery, scroll horizontally to explore"
           className="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth px-6 pb-4 sm:px-8 lg:px-14"
         >
           {GALLERY.map((g, i) => (

@@ -1,10 +1,10 @@
-import { Clock, MapPin, Navigation, Phone } from 'lucide-react'
+import { Clock, MapPin, Navigation, Mail } from 'lucide-react'
 import Reveal from './ui/Reveal'
 import SplitText from './ui/SplitText'
 import { SITE } from '../lib/site'
 
 const ADDRESS = SITE.address
-const PHONE = SITE.phoneDisplay
+const EMAIL = SITE.email
 const MAP_EMBED = SITE.mapEmbed
 const DIRECTIONS = SITE.directions
 
@@ -29,6 +29,7 @@ export default function Location() {
 
         <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:col-span-5">
+            <p className="mb-6 text-xs leading-relaxed text-cream/50">A sample café in Bandra West. Address, hours, and contact details are illustrative.</p>
             <Reveal y={30} blur={8}>
               <div className="flex items-start gap-4 border-b border-cream/10 pb-7">
                 <MapPin size={19} className="mt-1 shrink-0 text-ember" />
@@ -60,14 +61,14 @@ export default function Location() {
 
             <Reveal y={30} blur={8} delay={0.12}>
               <div className="flex items-start gap-4 border-b border-cream/10 py-7">
-                <Phone size={19} className="mt-1 shrink-0 text-ember" />
+                <Mail size={19} className="mt-1 shrink-0 text-ember" />
                 <div>
-                  <p className="text-[11px] uppercase tracking-[0.2em] text-cream/40">Reservations</p>
+                  <p className="text-[11px] uppercase tracking-[0.2em] text-cream/40">Get in touch</p>
                   <a
-                    href={SITE.phoneHref}
+                    href={`mailto:${SITE.email}`}
                     className="mt-2 block font-display text-xl font-light text-cream transition-colors hover:text-ember"
                   >
-                    {PHONE}
+                    {EMAIL}
                   </a>
                 </div>
               </div>
@@ -84,8 +85,8 @@ export default function Location() {
                   Get Directions
                   <Navigation size={15} className="transition-transform duration-500 group-hover:translate-x-1" />
                 </a>
-                <a href={SITE.phoneHref} className="btn btn-ghost">
-                  Call
+                <a href={`mailto:${SITE.email}`} className="btn btn-ghost">
+                  Email us
                 </a>
               </div>
             </Reveal>

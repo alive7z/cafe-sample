@@ -5,12 +5,10 @@ export default defineConfig({
   plugins: [react()],
   build: {
     target: 'es2020',
-    chunkSizeWarningLimit: 1600,
+    chunkSizeWarningLimit: 500,
     rollupOptions: {
       output: {
         manualChunks: {
-          three: ['three'],
-          r3f: ['@react-three/fiber', '@react-three/drei'],
           motion: ['framer-motion'],
         },
       },
