@@ -28,11 +28,11 @@ export default function FeaturedMenu() {
             <SplitText
               as="h2"
               text={['A short menu,', 'done beautifully.']}
-              className="font-display text-[11vw] font-light leading-[0.98] tracking-tightest text-cream sm:text-[7vw] lg:text-[4.4rem]"
+              className="font-display text-[11vw] font-light leading-[0.98] tracking-tightest text-espresso sm:text-[7vw] lg:text-[4.4rem]"
             />
           </div>
           <Reveal delay={0.1} y={24} blur={6}>
-            <p className="max-w-[38ch] text-[15px] font-light leading-relaxed text-cream/55">
+            <p className="max-w-[38ch] text-[15px] font-light leading-relaxed text-espresso/70">
               Six things we’d order ourselves — from the espresso bar to the stone oven.
               Everything made to order, nothing rushed.
             </p>
@@ -46,7 +46,7 @@ export default function FeaturedMenu() {
           {filtered.map((item, i) => (
             <Reveal key={item.name} delay={(i % 3) * 0.08} y={40} blur={0} amount={0.15}>
               <div className="h-full">
-                <article className="group relative flex h-full flex-col overflow-hidden rounded-[22px] border border-cream/10 bg-white/[0.025] transition-colors duration-700 hover:border-ember/40">
+                <article className="group relative flex h-full flex-col overflow-hidden rounded-[22px] border border-espresso/10 bg-[#fff9f0] shadow-sm shadow-espresso/5 transition-colors duration-700 hover:border-ember/40">
                   <div className="relative overflow-hidden">
                     <SmartImage
                       src={item.img}
@@ -55,8 +55,8 @@ export default function FeaturedMenu() {
                       hoverScale={1.12}
                       className="aspect-[4/3] w-full"
                     />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/80 via-transparent to-transparent" />
-                    <span className="absolute left-4 top-4 rounded-full border border-cream/15 bg-ink/40 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-cream/70 backdrop-blur-md">
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-espresso/80 via-transparent to-transparent" />
+                    <span className="absolute left-4 top-4 rounded-full border border-espresso/15 bg-[#fff9f0]/95 px-3 py-1 text-[10px] uppercase tracking-[0.18em] text-espresso/80">
                       {item.tag}
                     </span>
                   </div>
@@ -65,18 +65,18 @@ export default function FeaturedMenu() {
                     className="flex flex-1 flex-col p-6"
                   >
                     <div className="flex items-start justify-between gap-4">
-                      <h3 className="font-display text-2xl font-light text-cream">{item.name}</h3>
+                      <h3 className="font-display text-2xl font-light text-espresso">{item.name}</h3>
                       <span className="mt-1 shrink-0 font-display text-xl font-light text-ember">
                         {item.price}
                       </span>
                     </div>
-                    <p className="mt-3 flex-1 text-[13.5px] font-light leading-relaxed text-cream/50">
+                    <p className="mt-3 flex-1 text-[13.5px] font-light leading-relaxed text-espresso/70">
                       {item.description}
                     </p>
 
-                    <button onClick={() => showItem(item)} aria-label={`View ${item.name} details`} className="group/btn mt-6 inline-flex min-h-11 w-fit items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-cream/70 transition-colors duration-500 hover:text-white">
+                    <button onClick={() => showItem(item)} aria-label={`View ${item.name} details`} className="group/btn mt-6 inline-flex min-h-11 w-fit items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-espresso/70 transition-colors duration-500 hover:text-espresso">
                       View
-                      <span className="grid h-7 w-7 place-items-center rounded-full border border-cream/20 transition-all duration-500 group-hover/btn:border-ember group-hover/btn:bg-ember group-hover/btn:text-ink">
+                      <span className="grid h-7 w-7 place-items-center rounded-full border border-espresso/20 transition-all duration-500 group-hover/btn:border-ember group-hover/btn:bg-ember group-hover/btn:text-cream">
                         <ArrowUpRight size={13} />
                       </span>
                     </button>
@@ -86,13 +86,13 @@ export default function FeaturedMenu() {
             </Reveal>
           ))}
         </div>
-        <p className="mt-7 text-xs leading-relaxed text-cream/45">Made fresh to order. Please ask our team about allergens and dietary preferences.</p>
+        <p className="mt-7 text-xs leading-relaxed text-espresso/70">Made fresh to order. Please ask our team about allergens and dietary preferences.</p>
       </div>
       <dialog ref={dialog} onClose={() => setSelected(null)} onClick={event => { if (event.target === dialog.current) closeItem() }} className="menu-dialog" aria-labelledby="menu-item-title">
-        {selected && <div className="relative overflow-hidden rounded-2xl border border-cream/15 bg-[#191a16] text-cream">
-          <button autoFocus onClick={closeItem} aria-label="Close menu details" className="absolute right-4 top-4 z-10 grid h-11 w-11 place-items-center rounded-full border border-cream/30 bg-ink/90"><X size={18} /></button>
+        {selected && <div className="relative overflow-hidden rounded-2xl border border-espresso/15 bg-[#fff9f0] text-espresso">
+          <button autoFocus onClick={closeItem} aria-label="Close menu details" className="absolute right-4 top-4 z-10 grid h-11 w-11 place-items-center rounded-full border border-espresso/30 bg-cream/90"><X size={18} /></button>
           <SmartImage src={selected.img} alt={selected.name} className="h-56 w-full" />
-          <div className="p-7"><p className="eyebrow mb-3">{selected.tag}</p><div className="flex items-center justify-between gap-4"><h3 id="menu-item-title" className="font-display text-3xl">{selected.name}</h3><span className="text-ember">{selected.price}</span></div><p className="mt-4 text-sm leading-relaxed text-cream/70">{selected.description}</p><p className="mt-6 border-t border-cream/10 pt-5 text-xs leading-relaxed text-cream/50">Freshly prepared in our café. Ask our team about ingredients, allergens, and available customisations.</p><button onClick={() => { closeItem(); document.querySelector('#location')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }) }} className="btn btn-solid mt-6">Visit the café <ArrowUpRight size={15} /></button></div>
+          <div className="p-7"><p className="eyebrow mb-3">{selected.tag}</p><div className="flex items-center justify-between gap-4"><h3 id="menu-item-title" className="font-display text-3xl">{selected.name}</h3><span className="text-ember">{selected.price}</span></div><p className="mt-4 text-sm leading-relaxed text-espresso/70">{selected.description}</p><p className="mt-6 border-t border-espresso/10 pt-5 text-xs leading-relaxed text-espresso/70">Freshly prepared in our café. Ask our team about ingredients, allergens, and available customisations.</p><button onClick={() => { closeItem(); document.querySelector('#location')?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' }) }} className="btn btn-solid mt-6">Visit the café <ArrowUpRight size={15} /></button></div>
         </div>}
       </dialog>
     </section>

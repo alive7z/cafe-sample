@@ -17,11 +17,11 @@ export default function Atmosphere() {
             <SplitText
               as="h2"
               text={['Warm light,', 'slow hours.']}
-              className="font-display text-[11vw] font-light leading-[0.98] tracking-tightest text-cream sm:text-[7vw] lg:text-[4.4rem]"
+              className="font-display text-[11vw] font-light leading-[0.98] tracking-tightest text-espresso sm:text-[7vw] lg:text-[4.4rem]"
             />
           </div>
           <Reveal delay={0.1} y={24} blur={6}>
-            <p className="max-w-[36ch] text-[15px] font-light leading-relaxed text-cream/55">
+            <p className="max-w-[36ch] text-[15px] font-light leading-relaxed text-espresso/70">
               A room built for lingering — deep wood, low light, and the hum of good
               conversation from open till close.
             </p>
@@ -42,7 +42,7 @@ export default function Atmosphere() {
                 (item.key === 'interior' ? ' sm:col-span-1' : '')
               }
             >
-              <figure className="group relative h-full w-full overflow-hidden rounded-[20px] border border-cream/10">
+              <figure className="group relative h-full w-full overflow-hidden rounded-[20px] border border-espresso/10">
                 <SmartImage
                   src={item.img}
                   alt={item.caption}
@@ -51,10 +51,10 @@ export default function Atmosphere() {
                   hoverScale={1.06}
                   className="h-full w-full"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/75 via-ink/5 to-transparent opacity-90" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-espresso/75 via-espresso/5 to-transparent opacity-90" />
                 <figcaption className="absolute bottom-5 left-5 flex items-center gap-3">
-                  <span className="h-px w-6 bg-ember/70" />
-                  <span className="text-[11px] uppercase tracking-[0.2em] text-cream/85">
+                  <span className="h-px w-6 bg-cream/70" />
+                  <span className="text-[11px] uppercase tracking-[0.2em] text-cream/95">
                     {item.caption}
                   </span>
                 </figcaption>

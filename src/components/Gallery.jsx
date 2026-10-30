@@ -27,7 +27,7 @@ export default function Gallery() {
           <SplitText
             as="h2"
             text={['Moments, in still.']}
-            className="font-display text-[11vw] font-light leading-[0.98] tracking-tightest text-cream sm:text-[7vw] lg:text-[4.4rem]"
+            className="font-display text-[11vw] font-light leading-[0.98] tracking-tightest text-espresso sm:text-[7vw] lg:text-[4.4rem]"
           />
         </div>
 
@@ -35,14 +35,14 @@ export default function Gallery() {
           <button
             onClick={() => nudge(-1)}
             aria-label="Previous"
-            className="grid h-12 w-12 place-items-center rounded-full border border-cream/15 text-cream transition-all duration-500 hover:border-ember hover:bg-ember hover:text-ink"
+            className="grid h-12 w-12 place-items-center rounded-full border border-espresso/15 text-espresso transition-all duration-500 hover:border-ember hover:bg-ember hover:text-cream"
           >
             <ArrowLeft size={17} />
           </button>
           <button
             onClick={() => nudge(1)}
             aria-label="Next"
-            className="grid h-12 w-12 place-items-center rounded-full border border-cream/15 text-cream transition-all duration-500 hover:border-ember hover:bg-ember hover:text-ink"
+            className="grid h-12 w-12 place-items-center rounded-full border border-espresso/15 text-espresso transition-all duration-500 hover:border-ember hover:bg-ember hover:text-cream"
           >
             <ArrowRight size={17} />
           </button>
@@ -52,11 +52,11 @@ export default function Gallery() {
       <div className="relative">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-ink to-transparent lg:w-28"
+          className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-cream to-transparent lg:w-28"
         />
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-ink to-transparent lg:w-28"
+          className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-cream to-transparent lg:w-28"
         />
 
         <div
@@ -64,7 +64,7 @@ export default function Gallery() {
           tabIndex={0}
           role="region"
           aria-label="Café photo gallery, scroll horizontally to explore"
-          className="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth px-6 pb-4 sm:px-8 lg:px-14"
+          className="no-scrollbar flex snap-x snap-proximity gap-5 overflow-x-auto scroll-smooth px-6 pb-4 sm:px-8 lg:px-14"
         >
           {GALLERY.map((g, i) => (
             <Reveal
@@ -75,7 +75,7 @@ export default function Gallery() {
               amount={0.1}
               className="shrink-0 snap-start"
             >
-              <figure className="group relative h-[46vh] w-[78vw] overflow-hidden rounded-[24px] border border-cream/10 sm:h-[54vh] sm:w-[440px] lg:w-[520px]">
+              <figure className="group relative h-[46vh] w-[78vw] overflow-hidden rounded-[24px] border border-espresso/10 sm:h-[54vh] sm:w-[440px] lg:w-[520px]">
                 <SmartImage
                   src={g.img}
                   alt={g.label}
@@ -83,10 +83,10 @@ export default function Gallery() {
                   hoverScale={1.1}
                   className="h-full w-full"
                 />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/70 to-transparent" />
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-espresso/70 to-transparent" />
                 <figcaption className="absolute bottom-6 left-6 font-display text-xl font-light text-cream">
                   {g.label}
-                  <span className="mt-1 block text-[10px] uppercase tracking-[0.22em] text-ember/90">
+                  <span className="mt-1 block text-[10px] uppercase tracking-[0.22em] text-cream/80">
                     0{i + 1} / 0{GALLERY.length}
                   </span>
                 </figcaption>

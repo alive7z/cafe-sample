@@ -22,7 +22,7 @@ export default function FinalCTA() {
           as="h2"
           text={['Coffee tastes better', 'when the moment', 'feels right.']}
           stagger={0.08}
-          className="max-w-[20ch] font-display text-[11vw] font-light leading-[0.98] tracking-tightest text-cream sm:text-[7.5vw] lg:text-[5rem]"
+          className="max-w-[20ch] font-display text-[11vw] font-light leading-[0.98] tracking-tightest text-espresso sm:text-[7.5vw] lg:text-[5rem]"
         />
 
         <Reveal delay={0.3} y={26} blur={8}>

@@ -4,11 +4,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        ink: '#0B0B0B',
-        espresso: '#3B2416',
+        ink: '#2D2118',
+        espresso: '#3B291E',
         coffee: '#6F4E37',
-        cream: '#F5EFE6',
-        ember: '#C08A5E',
+        cream: '#F7EFE3',
+        oat: '#EDE0CF',
+        latte: '#FFF9F0',
+        ember: '#98603A',
       },
       fontFamily: {
         display: ['Fraunces', 'Georgia', 'serif'],

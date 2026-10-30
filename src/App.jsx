@@ -13,7 +13,7 @@ import Footer from './components/Footer'
 export default function App() {
   return (
     <MotionConfig reducedMotion="user">
-      <div className="relative min-h-screen bg-ink">
+      <div className="relative min-h-screen bg-cream">
 
 
         <Navbar />
